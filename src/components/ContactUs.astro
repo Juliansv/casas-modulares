@@ -1,0 +1,57 @@
+<section id="container" class="h-svh content-center">
+	<div id="form-container" class="px-4 py-10 flex flex-col gap-10 md:h-full">
+		<h3 class="text-5xl text-center w-full md:text-7xl">Contáctanos</h3>
+		<div class="md:h-full md:px-10">
+			<form action="" class="md:flex md:flex-col md:h-[80svh]">
+				<label for="name" class="text-xl md:text-4xl md:py-4"
+					>Nombre completo:</label
+				>
+				<input
+					name="name"
+					type="text"
+					class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-18"
+				/>
+				<label for="email" class="text-xl md:text-4xl md:py-4"
+					>Email:</label
+				>
+				<input
+					name="email"
+					type="email"
+					class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-18"
+				/>
+				<label for="phone" class="text-xl md:text-4xl md:py-4"
+					>Telefono:</label
+				>
+				<input
+					name="phone"
+					type="tel"
+					class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-18"
+				/>
+				<label for="project-select" class="text-xl md:text-4xl md:py-4"
+					>Proyecto de interés:</label
+				>
+				<select
+					name="projects"
+					class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-18 md:text-4xl appearance-none"
+				>
+					<option value="" disabled selected>Seleccione</option>
+					<option value="casa">Casa</option>
+					<option value="chalet">Chalet</option>
+					<option value="cubiculo">Cubiculo fran</option>
+				</select>
+				<label for="message" class="text-xl md:text-4xl md:py-4"
+					>Mensaje</label
+				>
+				<textarea
+					name="message"
+					placeholder="Cuentanos cual es tu presupuesto, zona de construccion, ubicacion y tamaño del lote y cualquier informacion relevante para que podámos darte la cotizacion más precisa posible!"
+					class="bg-gray-400 w-full mt-1 rounded-xl p-4 md:text-4xl"
+					rows="5"></textarea>
+				<button
+					class="bg-[#355070] w-full rounded-xl text-white text-xl h-14 mt-6 md:h-24 md:mt-16 md:text-4xl md:font-bold"
+					type="submit">ENVIAR</button
+				>
+			</form>
+		</div>
+	</div>
+</section>

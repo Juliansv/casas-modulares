@@ -1,0 +1,150 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section id="container" class="relative w-full overflow-hidden">
+	<div id="cards-wrapper" class="flex transition-transform duration-500">
+		<div id="card-1" class="bg-[#E89B33] min-w-full flex-shrink-0">
+			<div class="p-4 flex flex-col h-svh">
+				<div class="h-[33svh] flex flex-col gap-4 p-10 md:gap-6">
+					<h3
+						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
+					>
+						CUBICULO
+					</h3>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						40m2
+					</h4>
+					<button
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+					>
+						MAS INFORMACION
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="card-2" class="bg-[#6B8E23] min-w-full flex-shrink-0">
+			<div class="p-4 flex flex-col h-svh">
+				<div class="h-[36svh] flex flex-col gap-4 p-10">
+					<h3
+						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
+					>
+						CHALET
+					</h3>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						Tipo S 56m2
+					</h4>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						Tipo M 74m2
+					</h4>
+					<button
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+					>
+						MAS INFORMACION
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="card-3" class="bg-[#355070] min-w-full flex-shrink-0">
+			<div class="p-4 flex flex-col h-svh">
+				<div class="h-[33svh] flex flex-col gap-4 p-10">
+					<h3
+						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
+					>
+						CASA
+					</h3>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						100m2
+					</h4>
+					<button
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+					>
+						MAS INFORMACION
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Navigation Arrows -->
+	<button
+		id="prev"
+		class="absolute text-9xl font-extrabold top-1/2 -left-10 transform -translate-y-1/2 text-white p-3 rounded-full arrowHidden"
+	>
+		<Icon name="mdi-light:chevron-left" />
+	</button>
+	<button
+		id="next"
+		class="absolute text-9xl font-extrabold top-1/2 -right-10 transform -translate-y-1/2 text-white p-3 rounded-full"
+	>
+		<Icon name="mdi-light:chevron-right" />
+	</button>
+</section>
+
+<style>
+	#container {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#cards-wrapper {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		transform: translateX(0%);
+	}
+
+	#cards-wrapper > div {
+		width: 100%;
+		height: 100%;
+		flex-shrink: 0;
+	}
+
+	.arrowHidden {
+		display: none;
+	}
+
+	button {
+		cursor: pointer;
+	}
+</style>
+
+<script>
+	let currentIndex = 0;
+	const cardsWrapper = document.getElementById("cards-wrapper");
+	const totalCards = document.querySelectorAll("#cards-wrapper > div").length;
+	const prevArrow = document.getElementById("prev");
+	const nextArrow = document.getElementById("next");
+
+	nextArrow?.addEventListener("click", () => {
+		if (currentIndex < totalCards - 1) {
+			currentIndex++;
+			prevArrow?.classList.remove("arrowHidden");
+			updateCarousel();
+		}
+		if (currentIndex === totalCards - 1) {
+			nextArrow?.classList.add("arrowHidden");
+		}
+	});
+
+	prevArrow?.addEventListener("click", () => {
+		if (currentIndex > 0) {
+			currentIndex--;
+			nextArrow?.classList.remove("arrowHidden");
+			updateCarousel();
+		}
+		if (currentIndex === 0) {
+			prevArrow?.classList.add("arrowHidden");
+		}
+	});
+
+	function updateCarousel() {
+		const offset = -currentIndex * 100;
+		if (cardsWrapper) {
+			cardsWrapper.style.transform = `translateX(${offset}%)`;
+		}
+	}
+</script>
