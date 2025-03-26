@@ -2,8 +2,11 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section id="container" class="relative w-full overflow-hidden">
-	<div id="cards-wrapper" class="flex transition-transform duration-500">
+<section id="container" class="relative w-full overflow-hidden lg:h-auto!">
+	<div
+		id="cards-wrapper"
+		class="flex transition-transform duration-500 lg:flex-col"
+	>
 		<div id="card-1" class="bg-[#E89B33] min-w-full flex-shrink-0">
 			<div class="p-4 flex flex-col h-svh">
 				<div class="h-[33svh] flex flex-col gap-4 p-10 md:gap-6">
@@ -68,13 +71,13 @@ import { Icon } from "astro-icon/components";
 	<!-- Navigation Arrows -->
 	<button
 		id="prev"
-		class="absolute text-9xl font-extrabold top-1/2 -left-10 transform -translate-y-1/2 text-white p-3 rounded-full arrowHidden"
+		class="absolute text-9xl font-extrabold top-1/2 -left-10 transform -translate-y-1/2 text-white p-3 rounded-full arrowHidden lg:hidden"
 	>
 		<Icon name="mdi-light:chevron-left" />
 	</button>
 	<button
 		id="next"
-		class="absolute text-9xl font-extrabold top-1/2 -right-10 transform -translate-y-1/2 text-white p-3 rounded-full"
+		class="absolute text-9xl font-extrabold top-1/2 -right-10 transform -translate-y-1/2 text-white p-3 rounded-full lg:hidden"
 	>
 		<Icon name="mdi-light:chevron-right" />
 	</button>
