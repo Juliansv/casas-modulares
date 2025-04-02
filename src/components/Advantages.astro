@@ -133,4 +133,17 @@ import { Icon } from "astro-icon/components";
 	#box-with-shadow {
 		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 50%);
 	}
+
+	@media only screen and (max-width: 410px) {
+		#advantage-card {
+			scale: 1;
+		}
+		#cards-container {
+			gap: 10px;
+			scale: 0.7;
+			margin: -100px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
 </style>
